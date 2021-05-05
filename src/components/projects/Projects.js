@@ -1,15 +1,17 @@
+import { Grid, Paper } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { ExternalLink } from "react-feather";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 require("dotenv").config();
 
 export const Projects = () => {
+  const url = "https://api.github.com/graphql";
   let [githubData, setGithubData] = useState([]);
   /**
    * fetching github data using graphql api.
    */
   useEffect(() => {
-    fetch("https://api.github.com/graphql", {
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,19 +20,20 @@ export const Projects = () => {
       body: JSON.stringify({
         query: `
         query PinnedRepos {
-			viewer {
-			  pinnedItems(first: 6) {
-				edges {
-				  node {
-					... on Repository {
-					  name
-					  description
-					}
-				  }
-				}
-			  }
-			}
-		  }
+          viewer {
+            pinnedItems(first: 6) {
+            edges {
+              node {
+              ... on Repository {
+                name
+                description
+                url
+              }
+              }
+            }
+            }
+          }
+	  	  }
       `,
       }),
     })
@@ -46,12 +49,12 @@ export const Projects = () => {
 
   return (
     <>
-      {githubData ? (
+      {/* {githubData ? (
         <div className="projectCards">
           {githubData.map((project) => (
             <Router key={project.node.name}>
               <Link
-                to={`/`}
+                to={project.node.url}
                 style={{
                   width: [
                     "calc(100% - 16px)",
@@ -70,13 +73,10 @@ export const Projects = () => {
                   style={{
                     display: `block`,
                     borderRadius: `3px`,
-                    color: "black",
-                    backgroundColor: "#eee",
+                    color: "#fff",
+                    backgroundColor: `#192734`,
                     boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 8px 0px",
                     padding: "15px",
-                    ":hover": {
-                      boxShadow: "rgba(0, 0, 0, 0.21) 0px 6px 16px 0px",
-                    },
                     minHeight: "144px",
                     cursor: "pointer",
                   }}
@@ -97,9 +97,9 @@ export const Projects = () => {
                   <div
                     style={{
                       marginTop: "10px",
-                      fontSize: "14px",
-                      color: "#000",
-                      fontWeight: 500,
+                      fontSize: "16px",
+                      color: `#fff`,
+                      fontWeight: 400,  
                     }}
                   >
                     {project.node.description}
@@ -111,7 +111,69 @@ export const Projects = () => {
         </div>
       ) : (
         <p>Loading...</p>
-      )}
+      )} */}
+      <Grid container spacing={2}>
+        {githubData.map((project) => (
+          <Grid item xs={12} md={6}>
+            {/* <Paper>{co.node.name}</Paper> */}
+            <Router key={project.node.name}>
+              <Link
+                to={project.node.url}
+                style={{
+                  width: [
+                    "calc(100% - 16px)",
+                    "calc(80% - 16px)",
+                    "calc(50% - 16px)",
+                    "calc(33.3% - 16px)",
+                  ],
+                  // margin: "8px",
+                  minWidth: "340px",
+                  maxWidth: "450px",
+                  textDecoration: "none",
+                }}
+              >
+                <div
+                  className="projectCard"
+                  style={{
+                    display: `block`,
+                    borderRadius: `3px`,
+                    color: "#fff",
+                    backgroundColor: `#192734`,
+                    boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 8px 0px",
+                    padding: "15px",
+                    minHeight: "144px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <div className="title" style={{ fontWeight: "bold" }}>
+                    {project.node.name}
+                    <span
+                      style={{
+                        float: "right",
+                        marginTop: "-12px",
+                        marginRight: "-7px",
+                        fontSize: "15px",
+                      }}
+                    >
+                      &#8599;
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: "10px",
+                      fontSize: "16px",
+                      color: `#fff`,
+                      fontWeight: 400,
+                    }}
+                  >
+                    {project.node.description}
+                  </div>
+                </div>
+              </Link>
+            </Router>
+          </Grid>
+        ))}
+      </Grid>
     </>
   );
 };

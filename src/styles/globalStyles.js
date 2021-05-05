@@ -6,17 +6,6 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text};
         transition: all 0.3s linear;
     }
-    // .btn-primary {
-    //     background: ${({ theme }) => theme.primary};
-    //     color: ${({ theme }) => theme.text};
-    //     padding: 0.5rem 1.5rem;
-    //     font-size: 1rem;
-    //     border-radius: 1rem;
-    //     cursor: pointer;
-    //     outline: none;
-    //     border: none;
-    //     transition: all 0.3s linear;
-    // }
     .toggle-btn {
         position: absolute;
         top: 2rem;
@@ -82,7 +71,7 @@ export const GlobalStyles = createGlobalStyle`
       }
       
       .lightText {
-        color: #666;
+        color: #8899a6;
       }
       .projectCard:hover .title {
         text-decoration: underline;
@@ -96,28 +85,50 @@ export const GlobalStyles = createGlobalStyle`
          color: black;
          text-decoration: none;
      }
-     .projectLinkActive {
-         color: white;
-         background-color: #494850;
-         font-weight: bold;
+    //  .projectLinkActive {
+    //      color: white;
+    //      background-color: #494850;
+    //      font-weight: bold;
+    //  }
+    //  .projectCards {
+    //   display: grid;
+    //   grid-auto-flow: row-dense;
+    //   // display: flex;
+    //   // flex-flow: wrap;
+    //   // flex-direction: column;
+    //   // flex-wrap: wrap;
+    //   // width: 100%;
+    //   // max-width: 1068px;
+    //  }
+     .social-links {
+       color: ${({ theme }) => theme.social_links}
      }
-     .projectCards {
-      display: flex,
-      flex-flow: wrap,
-      max-width: 1068px
+     .social-links:hover {
+       color: ${({ theme }) => theme.social_links_hover}
      }
+     
+    //  .projectCard:hover {
+    //     boxShadow: rgba(0, 0, 0, 0.21) 0px 6px 16px 0px;
+    //  }
+    }
 `;
 
 export const lightTheme = {
   body: "#fff",
-  text: "#121212",
+  text: "#15202b",
   primary: "#6200ee",
-  cardBg: "#ccc"
+  cardBg: "#494850",
+  social_links: "#192734",
+  social_links_hover: "#47A1EB",
 };
 
 export const darkTheme = {
-  body: "#121212",
-  text: "#fff",
+  // body: "#121212",
+  body: "#15202b",
+  text: "#e4e6eb",
   cardBg: "#333",
   primary: "#bb86fc",
+  // cardBg: "#eee"
+  social_links_hover: "#47A1EB",
+  social_links: "#0070f3",
 };

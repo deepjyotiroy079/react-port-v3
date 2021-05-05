@@ -10,7 +10,7 @@ function Toggle({theme, toggleTheme}) {
     console.log(theme);
     return (
         <div onClick={toggleTheme}>
-            {(theme === 'dark')? <Sun className="toggle-btn"/>: <Moon className="toggle-btn"/>}
+            {(theme === 'dark')? <Sun size={32} className="toggle-btn"/>: <Moon size={32} className="toggle-btn"/>}
         </div>
         
     )
