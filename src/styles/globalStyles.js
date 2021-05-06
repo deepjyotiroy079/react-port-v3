@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
     body{
@@ -6,11 +6,37 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text};
         transition: all 0.3s linear;
     }
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      min-height: 100px;
+      margin-top: 60px;
+      font-size: .85em;
+      opacity: .8;
+    }
+    i svg {
+      position: relative;
+      width: 1em;
+      margin: 0 3px;
+      top: .125em;
+    }
+
     .toggle-btn {
         position: absolute;
         top: 2rem;
         right: 4rem;
         transition: all 0.3s linear;
+    }
+    @media screen and (max-width: 768px) {
+      .toggle-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        transition: all 0.3s linear;
+      } 
     }
     .heading2Xl {
         font-size: 2.5rem;
@@ -114,21 +140,21 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const lightTheme = {
-  body: "#fff",
-  text: "#15202b",
-  primary: "#6200ee",
-  cardBg: "#494850",
-  social_links: "#192734",
-  social_links_hover: "#47A1EB",
+    body: '#fff',
+    text: '#15202b',
+    primary: '#6200ee',
+    cardBg: '#494850',
+    social_links: '#192734',
+    social_links_hover: '#47A1EB',
 };
 
 export const darkTheme = {
-  // body: "#121212",
-  body: "#15202b",
-  text: "#e4e6eb",
-  cardBg: "#333",
-  primary: "#bb86fc",
-  // cardBg: "#eee"
-  social_links_hover: "#47A1EB",
-  social_links: "#0070f3",
+    // body: "#121212",
+    body: '#15202b',
+    text: '#e4e6eb',
+    cardBg: '#333',
+    primary: '#bb86fc',
+    // cardBg: "#eee"
+    social_links_hover: '#47A1EB',
+    social_links: '#0070f3',
 };
