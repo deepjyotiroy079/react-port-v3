@@ -18,7 +18,7 @@ const Content = () => {
                     <strong>frontend</strong> and <strong>backend</strong> web
                     technologies to create *hobby* projects.
                 </p>
-                {/* Social Icons */}
+                {/* Social   Icons */}
                 <ul className="list">
                     <li className="listItem">
                         <a
