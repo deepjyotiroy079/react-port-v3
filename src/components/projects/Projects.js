@@ -57,7 +57,6 @@ export const Projects = () => {
                                 <a
                                     rel="nonreferrer"
                                     href={project.node.url}
-                                    target="_blank"
                                     style={{
                                         width: [
                                             'calc(100% - 16px)',
