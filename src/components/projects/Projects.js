@@ -53,7 +53,7 @@ export const Projects = () => {
                     {githubData.map((project) => (
                         <Grid item xs={12} md={6}>
                             {/* <Paper>{co.node.name}</Paper> */}
-                            <Router onC>
+                            <Router>
                                 <a
                                     rel="nonreferrer"
                                     href={project.node.url}
