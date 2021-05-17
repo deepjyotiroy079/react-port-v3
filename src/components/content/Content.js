@@ -1,7 +1,6 @@
 import { Facebook, Linkedin, GitHub, Instagram, Twitter } from 'react-feather';
 import Seperator from '../seperator/Seperator';
 import { Projects } from '../projects/Projects';
-import { Blogs } from '../blogs/Blogs';
 
 // eslint-disable-next-line
 const Content = () => {
