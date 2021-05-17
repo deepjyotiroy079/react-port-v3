@@ -7,7 +7,7 @@ import Toggle from './components/toggle/Toggle';
 import { darkTheme, GlobalStyles, lightTheme } from './styles/globalStyles';
 import { Footer } from './components/footer/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { SingleBlog } from './components/blogs/SingleBlog';
+// import { SingleBlog } from './components/blogs/SingleBlog';
 
 const Container = styled.div`
 	max-width: 50%;
@@ -35,7 +35,7 @@ function App() {
 							<Content />
 							<Footer />
 						</Route>
-                        <Route path="/blog/:slug" component={SingleBlog} />
+                        {/* <Route path="/blog/:slug" component={SingleBlog} /> */}
 					</Switch>
 				</Container>
 			</ThemeProvider>

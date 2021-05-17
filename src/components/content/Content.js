@@ -70,11 +70,6 @@ const Content = () => {
                 <Projects />
             </div>
             <Seperator my={[4, 5]} width={['50%', '25%']} height={24} />
-            <div>
-                <p className="headingLg">Few things I've wrote recently</p>
-                <Blogs />
-            </div>
-            <Seperator my={[4, 5]} width={['50%', '25%']} height={24} />
         </>
     );
 };
