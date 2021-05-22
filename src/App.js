@@ -8,6 +8,7 @@ import { darkTheme, GlobalStyles, lightTheme } from './styles/globalStyles';
 import { Footer } from './components/footer/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { SingleBlog } from './components/blogs/SingleBlog';
+import { CreateBlog } from './components/blogs/CreateBlog';
 
 const Container = styled.div`
 	max-width: 50%;
@@ -35,7 +36,8 @@ function App() {
 							<Content />
 							<Footer />
 						</Route>
-                        <Route path="/blog/:slug" component={SingleBlog} />
+                        <Route path="/blogs/:slug" component={SingleBlog} />
+						<Route path="/blog/create" component={CreateBlog} />
 					</Switch>
 				</Container>
 			</ThemeProvider>

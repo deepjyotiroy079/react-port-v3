@@ -22,7 +22,7 @@ export const SingleBlog = () => {
 	}, [slug]);
 
 	return (
-		<div>
+		<div style={{ width: `100%`, margin: `50px` }}>
 			<h1>{blog.post.title}</h1>
             <h4>{blog.post.description}</h4>
             <p>{blog.post.createdOn}</p>

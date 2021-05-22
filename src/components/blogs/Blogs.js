@@ -14,16 +14,16 @@ export const Blogs = () => {
 
 	useEffect(() => {
 		fetchBlogs();
-	}, []);
+	}, [blogs]);
 	return (
 		<div>
 			{blogs &&
 				blogs.map((blog) => (
 					<Switch>
 						<Route exact path="/">
-							<Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
+							<Link to={`/blogs/${blog.slug}`}>{blog.title}</Link>
 						</Route>
-						<Router exact path={`/blog/:${blog.slug}`} component={SingleBlog} />
+						<Router exact path={`/blogs/:${blog.slug}`} component={SingleBlog} />
 					</Switch>
 				))}
 		</div>

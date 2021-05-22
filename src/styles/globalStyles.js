@@ -137,6 +137,34 @@ export const GlobalStyles = createGlobalStyle`
     //     boxShadow: rgba(0, 0, 0, 0.21) 0px 6px 16px 0px;
     //  }
     }
+    input[type=text], select, textarea{
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    
+    /* Style the label to display next to the inputs */
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      float: right;
+    }
+    
+    /* Style the container */
+    // .container {
+    //   border-radius: 5px;
+    //   background-color: #f2f2f2;
+    //   padding: 20px;
+    // }
 `;
 
 export const lightTheme = {
@@ -146,6 +174,7 @@ export const lightTheme = {
     cardBg: '#494850',
     social_links: '#192734',
     social_links_hover: '#47A1EB',
+    input_color: '#8899a6'
 };
 
 export const darkTheme = {
@@ -157,4 +186,5 @@ export const darkTheme = {
     // cardBg: "#eee"
     social_links_hover: '#47A1EB',
     social_links: '#0070f3',
+    input_color: '#22303c'
 };
