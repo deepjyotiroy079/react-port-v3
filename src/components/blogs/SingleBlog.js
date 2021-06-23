@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link, Redirect } from 'react-router-dom';
 import postList from '../../out/posts.json';
 import marked from 'marked';
@@ -6,11 +6,13 @@ import Seperator from '../seperator/Seperator';
 import { Footer } from '../footer/Footer';
 const DOMPurify = require('dompurify')(window);
 
-
 export const SingleBlog = (props) => {
 	// const slug = useParams();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	const { slug } = useParams();
-	console.log(slug);
+	// console.log(slug);
 	if (!slug) {
 		console.log('Slug is not present');
 		<Redirect to="/404" />;
@@ -48,21 +50,23 @@ export const SingleBlog = (props) => {
 		// console.log(`The Content : `, fetchedPost.content);
 		return (
 			<>
-			<div className="post">
-				<Link className="links" to={`/`}>
-					&#8592; Back
-				</Link>
-				<h1>{fetchedPost.title}</h1>
-				<span>
-					{fetchedPost.date} 
-				</span>
-				<div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(marked(fetchedPost.content))}}>
+				<div className="post">
+					<Link className="links" to={`/`}>
+						&#8592; Back
+					</Link>
+					<h1>{fetchedPost.title}</h1>
+					<span>{fetchedPost.date}</span>
+					<div
+						dangerouslySetInnerHTML={{
+							__html: DOMPurify.sanitize(
+								marked(fetchedPost.content)
+							),
+						}}
+					></div>
 				</div>
-			</div>
-			<Seperator my={[4, 5]} width={['50%', '25%']} height={24} />
-			<Footer />
+				<Seperator my={[4, 5]} width={['50%', '25%']} height={24} />
+				<Footer />
 			</>
-			
 		);
 	}
 
