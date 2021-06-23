@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams, Link, Redirect } from 'react-router-dom';
 import postList from '../../out/posts.json';
-import ReactMarkdown from 'react-markdown';
 import marked from 'marked';
 import Seperator from '../seperator/Seperator';
 import { Footer } from '../footer/Footer';

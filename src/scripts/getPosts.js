@@ -41,7 +41,7 @@ const getPosts = () => {
                 const metadata = parseMetadata({lines, metadataIndices})
                 const content = parseContent({lines, metadataIndices})
         
-                const date = new Date(metadata.date)
+                // const date = new Date(metadata.date)
                 // const timestamp = date.getTime() / 1000;
                 const slug = slugify(metadata.title, { strict: true, lower: true });
                 post = {
