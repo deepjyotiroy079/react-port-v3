@@ -6,6 +6,7 @@ import { Blogs } from '../blogs/Blogs';
 // eslint-disable-next-line
 const Content = () => {
     const size = 32;
+
     return (
         <>
             <div>

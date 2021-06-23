@@ -1,31 +1,34 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { SingleBlog } from './SingleBlog';
+import postlist from '../../out/posts.json';
 
 export const Blogs = () => {
-	const [blogs, setBlogs] = useState([]);
-
-	const fetchBlogs = async () => {
-		await fetch('http://localhost:1337/api/blogs/')
-			.then((response) => response.json())
-			.then((data) => setBlogs(data.blogs));
-	};
-
-	useEffect(() => {
-		fetchBlogs();
-	}, []);
+	// const excerptList = postlist.map((post) => {
+	// 	return post.content.split(' ').slice(0, 20).join(' ') + '...';
+	// });
 	return (
 		<div>
-			{blogs &&
-				blogs.map((blog) => (
-					<Switch>
-						<Route exact path="/">
-							<Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
-						</Route>
-						<Router exact path={`/blog/:${blog.slug}`} component={SingleBlog} />
-					</Switch>
-				))}
+			{postlist.length &&
+				postlist.map((post, i) => {
+					return (
+						<div key={i} className="post-card">
+							<h2>
+								<Link className="links" to={`/blog/${post.id}`}>
+									{post.title}
+								</Link>
+							</h2>
+							<small>
+								Published on {post.date}
+							</small>
+							{/* <Markdown
+								children={excerptList[i]}
+								escapeHtml={false}
+							/> */}
+							{/* <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(marked(excerptList[i]))}}></div> */}
+						</div>
+					);
+				})}
 		</div>
 	);
 };
