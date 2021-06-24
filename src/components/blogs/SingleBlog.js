@@ -14,10 +14,10 @@ export const SingleBlog = (props) => {
 	const { slug } = useParams();
 	// console.log(slug);
 	if (!slug) {
-		console.log('Slug is not present');
+		// console.log('Slug is not present');
 		<Redirect to="/404" />;
 	} else {
-		console.log('slug is present');
+		// console.log('slug is present');
 		const fetchedPost = {};
 		let postExists = false;
 		postList.forEach((post, i) => {

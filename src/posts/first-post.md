@@ -4,7 +4,8 @@ author: Deepjyoti Roy
 date: June 22, 2021
 ---
 
-![Harry Potter](https://media.giphy.com/media/26BRzozg4TCBXv6QU/giphy.gif);
+[<img src="https://media.giphy.com/media/26BRzozg4TCBXv6QU/giphy.gif" width="100%" />](https://media.giphy.com/media/26BRzozg4TCBXv6QU/giphy.gif)
+
 
 ### Hey 👋🏽, I'm [Deepjyoti!](https://deepjyotiroy.vercel.app/) 
 
