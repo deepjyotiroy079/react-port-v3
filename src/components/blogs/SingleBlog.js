@@ -55,7 +55,8 @@ export const SingleBlog = (props) => {
 						&#8592; Back
 					</Link>
 					<h1>{fetchedPost.title}</h1>
-					<span>{fetchedPost.date}</span>
+					<span><strong>{fetchedPost.author}</strong>&nbsp;|&nbsp; {fetchedPost.date}</span>
+					{/* <span>{fetchedPost.date}</span> */}
 					<div
 						dangerouslySetInnerHTML={{
 							__html: DOMPurify.sanitize(
