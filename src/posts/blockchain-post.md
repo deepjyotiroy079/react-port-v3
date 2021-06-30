@@ -70,7 +70,7 @@ We will use the rule that the longest chain will be accepted as the main chain. 
 Nodes that attempt to solve the problem are known as <strong>`miners`</strong>.
 
 [<img src="https://media.giphy.com/media/McUCf6nN7feMSM2PWj/giphy.gif" width="100%" />](https://media.giphy.com/media/McUCf6nN7feMSM2PWj/giphy.gif)
-<!-- 
+<!-- x`
 [<img src="https://media.giphy.com/media/McUCf6nN7feMSM2PWj/giphy.gif" width="100%"](https://media.giphy.com/media/McUCf6nN7feMSM2PWj/giphy.gif) -->
 
 ## Nonce
@@ -94,9 +94,9 @@ The goal is to generate a hash with a certain number of leading zeros, which is 
 
 The blockchain must add a block to its chain at a given rate. For example in case of Bitcoin it's 10 mins. If blocks are added to the chain too frequently that means that difficulty is low and similarly if the blocks are added to chain too slowly that means the difficulty is high.
 
-```
+<strong>
     The Adding of blocks to the chain is know as Mining
-```
+</strong>
 
 To maintain an average mining rate we must adjust the difficulty for every block so as to add blocks at a reasonable rate. In this blockchain we are comparing the timestamp of the current block and the previous block.
 
