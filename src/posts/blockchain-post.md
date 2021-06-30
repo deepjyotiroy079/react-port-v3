@@ -80,9 +80,8 @@ For creating hash for the block the system requests for a very specific hash val
 The nonce value is iterated by one on every hash generation attempt. If the hash value satisfies the difficulty level, we save the nonce value in the block so other nodes can quickly validate the hash.
 
 <!-- <strong> -->
-```
-    BLOCK DATA + NONCE = HASH VALUE
-```
+BLOCK DATA + NONCE = HASH VALUE
+
 <!-- <strong> -->
 ## Difficulty
 
