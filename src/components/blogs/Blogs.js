@@ -18,9 +18,9 @@ export const Blogs = () => {
 									{post.title}
 								</Link>
 							</h2>
-							<small>
+							<span>
 								Published on {post.date}
-							</small>
+							</span>
 							{/* <Markdown
 								children={excerptList[i]}
 								escapeHtml={false}
