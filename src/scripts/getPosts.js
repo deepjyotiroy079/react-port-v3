@@ -11,6 +11,7 @@ const getPosts = () => {
             return console.log("Failed to list contents of directory: " + err)
         }
         files.forEach((file, i) => {
+            // printing the file list
             console.log(file);
             let obj = {}
             let post
@@ -52,12 +53,25 @@ const getPosts = () => {
                     content: content ? content : "No content given",
                 }
                 postlist.push(post)
+                
+                // sending this to the db.
+
+                // console.log(postlist);
+                
+
                 if (i === files.length - 1) {
                     const sortedList = postlist.sort ((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
+                    // delete existing posts.json file to create new one
+                    fs.unlink(path.join(__dirname, '../out/posts.json'), (err) => {
+                        if (err) throw err;
+                        // console.log('posts.json deleted!');
+                    });
+
                     let data = JSON.stringify(sortedList)
                     fs.writeFileSync(path.join(__dirname, '../out/posts.json'), data)
+                    // console.log('Data : ' + data);
                 }
                 
             })
